@@ -85,6 +85,65 @@
       filter: drop-shadow(0 2px 16px rgba(255,112,67,0.45));
     }
 
+    /* ── Hero headline ── */
+    .hero-headline {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #F1F8FF;
+    }
+    .hero-headline .highlight {
+      display: inline-block;
+      background: linear-gradient(135deg, #FF7043 0%, #FFD166 50%, #FF8A65 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 20px rgba(255,112,67,0.5)) drop-shadow(0 2px 8px rgba(255,112,67,0.3));
+      position: relative;
+    }
+    .hero-headline .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FF7043, #FFD166, transparent);
+      border-radius: 2px;
+    }
+
+    /* ── Decorative accent dots ── */
+    .deco-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FF7043, #FFD166);
+      box-shadow: 0 0 12px rgba(255,112,67,0.5);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(0.85); }
+    }
+
+    /* ── Floating accent ring ── */
+    .accent-ring {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2.5px solid rgba(255,209,102,0.6);
+      border-radius: 50%;
+      animation: spin-slow 6s linear infinite;
+      vertical-align: middle;
+      margin: 0 4px;
+    }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
     /* ── Eyebrow separator ── */
     .eyebrow-sep {
       width: 40px;
@@ -193,10 +252,10 @@
 
     /* ── Section heading ── */
     .section-heading {
-      font-size: clamp(1.625rem, 2.5vw, 2.25rem);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
       font-weight: 800;
       line-height: 1.15;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       color: #F1F8FF;
     }
 
@@ -386,14 +445,14 @@
           </div>
 
           <!-- Heading -->
-          <h1 class="font-heading font-extrabold leading-[1.1] tracking-tight text-white mb-6 reveal reveal-d1">
-            Giúp Trẻ <span class="gradient-text">Tắm Ngôn Ngữ</span><br>
+          <h1 class="hero-headline font-heading mb-8 reveal reveal-d1">
+            Giúp Trẻ <span class="highlight">Tắm Ngôn Ngữ</span><br>
             Mỗi Ngày Qua Sách Nói
           </h1>
 
           <!-- Subheadline -->
-          <p class="text-gray-400 text-sm sm:text-base leading-7 max-w-md reveal reveal-d2">
-            Chỉ cần nghe mỗi ngày <strong class="text-white font-semibold">15 phút</strong>, trẻ phát triển ngôn ngữ, tư duy và khả năng giao tiếp tự nhiên.
+          <p class="text-gray-300 text-base sm:text-lg leading-8 max-w-md reveal reveal-d2" style="font-size: clamp(1rem, 1.5vw, 1.2rem);">
+            Chỉ cần nghe mỗi ngày <strong class="text-white font-bold">15 phút</strong>, trẻ phát triển ngôn ngữ, tư duy và khả năng giao tiếp tự nhiên.
           </p>
 
           <!-- Buttons -->
